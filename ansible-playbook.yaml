@@ -1,0 +1,10 @@
+---
+- name: Playbook to share files with ubuntu1
+  hosts: ubuntu-node
+  remote_user: root
+  become: true
+  tasks:
+          - name: sending the jar-file into ubuntu1 host
+            copy:
+                    src: target/customer-data-0.0.1-SNAPSHOT.war
+                    dest: /home/ubuntu-node/ansible/customer-data-0.0.1-SNAPSHOT.war
